@@ -1,0 +1,23 @@
+experiment_name: "cifar10cnn_random"
+searchSpaceFile: search_space_cifar10cnn.json
+experimentWorkingDirectory: /dataset/test_dir/peizhongyi/BTTackler/nni-experiments
+
+
+trial_command: python model_cifar10cnn.py
+trial_code_directory: .
+
+trial_concurrency: 4
+maxExperimentDuration: 2h ####
+training_service:
+  platform: local
+  useActiveGpu: True
+trialGpuNumber: 1
+
+tuner:
+  name: random
+
+
+
+
+
+

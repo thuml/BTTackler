@@ -1,0 +1,31 @@
+experiment_name: "cifar10cnn_smac_bttackler"
+searchSpaceFile: search_space_cifar10cnn.json
+
+
+trial_command: python model_cifar10cnn.py
+trial_code_directory: .
+
+trial_concurrency: 8
+maxExperimentDuration: 6h ####
+training_service:
+  platform: local
+  useActiveGpu: false
+trialGpuNumber: 1
+
+advisor:
+  codeDirectory: ../../bttackler ###
+  className: bridger.btadvisor.BTAdvisor
+  classArgs:
+    shared:
+      max_epoch: 20
+    monitor: default
+    tuner:
+      name: smac
+    assessor: default
+
+
+
+
+
+
+
