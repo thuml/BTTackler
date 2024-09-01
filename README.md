@@ -24,6 +24,12 @@ python run_case.py cifar10cnn random_bttackler
 # all for cifar10cnn
 python run_case.py cifar10cnn all
 ```
+
+## TODO
+1. Higher code readability and configurable quality indicators.
+2. Code formatting and complete experiment cases.
+3. Cases for calibrating quality indicators.
+
 ## Citation
 If you find BTTackler useful, please cite our paper.
 ```
