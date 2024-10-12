@@ -2,6 +2,7 @@
 A Diagnosis-based Framework for Efficient Deep Learning Hyperparameter Optimization.
 
 ## Install
+*Based on Python 3.10*
 ```
 git clone git@github.com:Dmagine/BTTackler.git
 cd BTTackler
