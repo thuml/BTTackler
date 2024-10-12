@@ -45,11 +45,13 @@ class BTWatcher:
             return {"default": 0}
 
     def collect_per_batch(self, *args):
-        self.monitor.collect_in_training(*args)
+        if self.monitor_config is not None:
+            self.monitor.collect_in_training(*args)
 
     def collect_after_training(self, *args):
-        self.monitor.collect_after_training(*args)
-        self.monitor.calculate_after_training()
+        if self.monitor_config is not None:
+            self.monitor.collect_after_training(*args)
+            self.monitor.calculate_after_training()
 
     def collect_after_validating(self, *args):
         if self.monitor_config is not None:
@@ -68,7 +70,8 @@ class BTWatcher:
             self.monitor.init_cond(*args)
 
     def refresh_before_epoch_start(self):
-        self.monitor.refresh_before_epoch_start()
+        if self.monitor_config is not None:
+            self.monitor.refresh_before_epoch_start()
 
     def report_intermediate_result(self, rd=None, writer=None):
         d = {}

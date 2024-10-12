@@ -1,6 +1,6 @@
 experiment_name: "cifar10cnn_random"
 searchSpaceFile: search_space_cifar10cnn.json
-experimentWorkingDirectory: /dataset/test_dir/peizhongyi/BTTackler/nni-experiments
+experimentWorkingDirectory: ~/nni-experiments
 
 
 trial_command: python model_cifar10cnn.py
