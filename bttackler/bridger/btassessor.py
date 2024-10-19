@@ -176,7 +176,6 @@ class MyAssessor:
         self.diagnose_sc() if "SC" in self.symptom_name_list else None
         self.diagnose_ho() if "HO" in self.symptom_name_list else None
         self.diagnose_nmg() if "NMG" in self.symptom_name_list else None
-        self.diagnose_of() if "OF" in self.symptom_name_list else None
 
     def diagnose_of(self):
         self.info_dict["OF"] = []
