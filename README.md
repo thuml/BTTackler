@@ -4,7 +4,7 @@ A Diagnosis-based Framework for Efficient Deep Learning Hyperparameter Optimizat
 ## Install
 *Based on Python 3.10*
 ```
-git clone git@github.com:Dmagine/BTTackler.git
+git clone -b cenn git@github.com:Dmagine/BTTackler.git
 cd BTTackler
 pip install -r requirements.txt
 pip install -U .
