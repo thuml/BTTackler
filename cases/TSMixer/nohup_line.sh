@@ -1,0 +1,1 @@
+nohup sh TimesNet_saidi.sh > TimesNet1.log 2>&1 & 
