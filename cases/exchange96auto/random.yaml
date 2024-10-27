@@ -1,0 +1,25 @@
+experiment_name: "exchange96auto_random"
+searchSpaceFile: search_space_exchange96auto.json
+experimentWorkingDirectory: ~/nni-experiments
+
+
+trial_command: python3 model_exchange96auto.py
+trial_code_directory: .
+
+trial_concurrency: 4
+maxExperimentDuration: 2h ####
+training_service:
+  platform: local
+  useActiveGpu: True
+trialGpuNumber: 1
+
+tuner:
+  name: random
+  class_args:
+    optimize_mode: minimize
+
+
+
+
+
+

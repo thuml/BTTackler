@@ -14,8 +14,9 @@ from utils.tools import adjust_learning_rate
 
 warnings.filterwarnings('ignore')
 
-sys.path.append("../../new_package")
-from atdd_manager import ATDDManager
+# sys.path.append("../../new_package")
+# from atdd_manager import ATDDManager
+from bttackler.api.btwatcher import BTWatcher
 
 manager = None
 
@@ -25,7 +26,8 @@ class Exp_Main(Exp_Basic):
         super(Exp_Main, self).__init__(args)
         seed = 529
         global manager
-        manager = ATDDManager(seed=seed)
+        # manager = ATDDManager(seed=seed)
+        manager = BTWatcher(seed=seed)
         train_loader = self._get_data('train')[1]
         manager.init_basic(self.model, train_loader)
 
@@ -184,7 +186,8 @@ class Exp_Main(Exp_Basic):
                 else:
                     loss.backward()
                     ################
-                    manager.collect_in_training(self.model)
+                    # manager.collect_in_training(self.model)
+                    manager.collect_per_batch(self.model)
                     model_optim.step()
 
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
@@ -200,10 +203,12 @@ class Exp_Main(Exp_Basic):
             #     break
             ###########
             manager.collect_after_training(None, train_loss)
-            manager.calculate_after_training()
+            # manager.calculate_after_training()
             manager.collect_after_validating(None, vali_loss)
             manager.report_intermediate_result(vali_loss)
-            if manager.if_atdd_send_stop():
+            # if manager.if_atdd_send_stop():
+            #     break
+            if manager.stop_by_diagnosis():
                 break
 
             adjust_learning_rate(model_optim, epoch + 1, self.args)

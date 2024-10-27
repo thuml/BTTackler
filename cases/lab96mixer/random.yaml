@@ -1,0 +1,25 @@
+experiment_name: "lab96mixer_random"
+searchSpaceFile: search_space_lab96mixer.json
+experimentWorkingDirectory: ~/nni-experiments
+
+
+trial_command: python3 model_lab96mixer.py
+trial_code_directory: .
+
+trial_concurrency: 4
+maxExperimentDuration: 30m ####
+training_service:
+  platform: local
+  useActiveGpu: True
+trialGpuNumber: 1
+
+tuner:
+  name: random
+  class_args:
+    optimize_mode: minimize
+
+
+
+
+
+
