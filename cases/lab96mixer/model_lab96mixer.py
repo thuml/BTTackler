@@ -9,7 +9,7 @@ import torch
 sys.path.append("../TSMixer")
 from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast as Exp_Main
 
-seed = 529
+seed = 2024
 
 params = {
     "e_layers": 2,
@@ -158,7 +158,7 @@ def main():
     args = parser.parse_args()
 
     # fixed
-    args.train_epochs = 20  #######
+    args.train_epochs = 10  #######
     args.patience = args.train_epochs  # no early stop -> 10
     args.is_training = True
     # args.do_predict = False

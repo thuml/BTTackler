@@ -105,10 +105,10 @@ class BTMonitor:
                 return self.train_loss_list[-1]
 
     def get_final_default_metric_value(self):
-        if if_enable(["test"]) and "test" in self.intermediate_default:
-            if if_enable(["acc"]) and "acc" in self.intermediate_default:
+        if if_enable(["test"]) and "test" in self.final_default:
+            if if_enable(["acc"]) and "acc" in self.final_default:
                 return self.test_acc
-            if if_enable(["loss"]) and "loss" in self.intermediate_default:
+            if if_enable(["loss"]) and "loss" in self.final_default:
                 return self.test_loss
             # not fit for self.intermediate_default
             if if_enable(["acc"]):
