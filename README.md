@@ -7,13 +7,13 @@ A Diagnosis-based Framework for Efficient Deep Learning Hyperparameter Optimizat
 git clone git@github.com:thuml/BTTackler.git
 cd BTTackler
 pip install -r requirements.txt
-pip install -U .
+pip install nni[all]==2.10
+export PYTHONPATH=.:$PYTHONPATH
 ```
 
 ## Run Cases
 ```
-cd cases
-bash example_run_case.sh
+bash cases/example_run_case.sh
 ```
 or just,
 ```
