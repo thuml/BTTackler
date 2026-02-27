@@ -1,7 +1,7 @@
 # BTTackler
 A Diagnosis-based Framework for Efficient Deep Learning Hyperparameter Optimization.
 
-### Because of the environmental issues brought by nni, the current repository is not usable. A new version based on Optuna will be available soon.
+### Because of the environmental issues brought by nni, the current repository is not usable. A new version based on Optuna has been released at https://github.com/OswinGuai/BTTackler.
 
 ## Install
 *Based on Python 3.10*
@@ -50,3 +50,4 @@ If you have any questions or suggestions, feel free to contact:
 - Zhiyao Cen (cenzy23@mails.tsinghua.edu.cn)
 
 Or describe it in Issues.
+
